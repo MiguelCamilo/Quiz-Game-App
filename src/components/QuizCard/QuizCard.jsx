@@ -3,7 +3,7 @@ export default function QuizCard({
 	length,
 	questionId,
 	handle_question,
-    score
+	score,
 }) {
 	return (
 		<div className="mt-20 ml-3">
@@ -12,9 +12,17 @@ export default function QuizCard({
 			</h2>
 			{/* quiz card container */}
 			<div className="bg-white h-[38rem] w-[23rem] md:h-[43rem] md:w-[35rem] rounded-xl">
-				<p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">
-					Question {questionId + 1} of {length}                    
-				</p>
+				{/* top portion container */}
+				<div className="flex space-x-[20rem]">
+					<p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">
+						Question {questionId + 1} of {length}
+					</p>
+
+                    {/* button container */}
+					<div className="bg-[#2F527B] rounded-lg mt-3">
+						<button className="p-3 text-white font-bold text-sm">Skip</button>
+					</div>
+				</div>
 
 				{/* question container */}
 				<div className="flex justify-center mt-16">
@@ -25,7 +33,10 @@ export default function QuizCard({
 				<div className="flex flex-col items-center justify-center space-y-5 mt-10">
 					{data[questionId].options.map((results) => (
 						<div key={results.id}>
-							<button onClick={() => handle_question(results.isCorrect)} className="border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold">
+							<button
+								onClick={() => handle_question(results.isCorrect)}
+								className="border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold"
+							>
 								{results.answer}
 							</button>
 						</div>
