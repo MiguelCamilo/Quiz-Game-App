@@ -2,7 +2,7 @@
 export const data = [
 	{
 		id: "1",
-		question: "What is the capital of U.S?",
+		question: "What is the capital of United States?",
 		options: [
 			{ answer: "New York City", isCorrect: false },
 			{ answer: "Washington D.C", isCorrect: true },
@@ -12,7 +12,7 @@ export const data = [
 	},
 	{
 		id: "2",
-		question: "Whos is the first president of U.S?",
+		question: "Whos is the first president of United States?",
 		options: [
 			{ answer: "John Adams", isCorrect: false },
 			{ answer: "Obama", isCorrect: false },
