@@ -11,12 +11,10 @@ export default function QuizCard({
 				Random Quiz Game
 			</h2>
 			{/* quiz card container */}
-			<div className="bg-white h-[38rem] w-[23rem] md:h-[40rem] md:w-[35rem] rounded-xl">
+			<div className="bg-white h-[38rem] w-[23rem] md:h-[43rem] md:w-[35rem] rounded-xl">
 				<p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">
-					Question {questionId + 1}/{length}                    
+					Question {questionId + 1} of {length}                    
 				</p>
-
-                <p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">Correct Anwsers: {score}</p>
 
 				{/* question container */}
 				<div className="flex justify-center mt-16">

@@ -1,6 +1,4 @@
-
-
-export default function QuizResult() {
+export default function QuizResult({ length, score, handle_reset }) {
 	return (
 		<div className="mt-20 ml-3">
 			<h2 className="text-white text-left text-4xl font-black font-mono mb-5">
@@ -22,14 +20,17 @@ export default function QuizResult() {
 						Results
 					</h3>
 					<p className="text-xl font-thin">
-						You got <i className="font-semibold">4</i> correct anwsers !
+						You got <i className="font-semibold">{score}</i> correct anwsers out
+						of <i className="font-semibold">{length} !</i>
 					</p>
 				</div>
 
-                {/* try again button */}
-                <div className="ml-[8rem] mt-[10rem] w-[50%] p-5 border-2 border-slate-800 rounded-xl">
-				    <p className="text-center">Try Again</p>
-                </div>
+				{/* try again button */}
+				<button onClick={handle_reset} className="text-center">
+					<div className="ml-[10rem] mt-[10rem] w-[100%] p-5 border-2 border-[#6066D0B2] rounded-xl hover:bg-[#F9A826] hover:border-[#F9A826] hover:text-white text-[#6066D0B2] font-bold">
+						Try Again
+					</div>
+				</button>
 			</div>
 		</div>
 	);
