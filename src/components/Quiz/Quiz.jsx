@@ -43,6 +43,8 @@ export default function Quiz() {
                 questionId={questionId}
                 handle_question={handle_question}
                 score={score}
+                setQuestionId={setQuestionId}
+                setShowScore={setShowScore}
             />
         }
   

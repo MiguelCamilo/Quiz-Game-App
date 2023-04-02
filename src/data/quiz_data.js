@@ -47,8 +47,6 @@ export const data = [
 			{ answer: "Moose", isCorrect: false },
 			{ answer: "Beaver", isCorrect: false },
 			{ answer: "Grizzyly Bear", isCorrect: false },
-			{ answer: "Bald eagle", isCorrect: false },
-			{ answer: "Canadian horse", isCorrect: false },
 			{ answer: "None of the above", isCorrect: true },
 		],
 	},
