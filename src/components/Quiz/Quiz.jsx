@@ -3,6 +3,7 @@ import { useState } from "react";
 import QuizCard from "../QuizCard/QuizCard";
 import QuizResult from "../QuizResult/QuizResult";
 import Footer from "../QuizCard/Footer";
+import Login from "../../pages/Login";
 
 import { data } from "../../data/quiz_data";
 
@@ -31,7 +32,7 @@ export default function Quiz() {
 
 	return (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
-        {showScore
+        {/* {showScore
             ?<QuizResult 
                 length={length}
                 score={score}
@@ -46,7 +47,8 @@ export default function Quiz() {
                 setQuestionId={setQuestionId}
                 setShowScore={setShowScore}
             />
-        }
+        } */}
+        <Login />
   
         <div className="flex-grow"></div>
 

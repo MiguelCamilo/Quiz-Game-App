@@ -33,6 +33,9 @@ export default function QuizCard({
 						Question {questionId + 1} of {length}
 					</p>
 
+                    {/* <button class="bg-blue-500 text-white px-4 py-2 rounded-md active:bg-transparent focus:outline-none">Click me!</button> */}
+
+
 					{/* button container */}
 					<div className="group mt-5">
 						<button
