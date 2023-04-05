@@ -3,20 +3,12 @@ import { useState, Fragment } from "react";
 
 function FeedbackButton() {
 	let [isOpen, setIsOpen] = useState(false);
-
-	function closeModal() {
-		setIsOpen(false);
-	}
-
-	function openModal() {
-		setIsOpen(true);
-	}
 	return (
 		<>
 			<div className="flex items-center justify-center mt-2">
 				<button
 					type="button"
-					onClick={openModal}
+					onClick={() => setIsOpen(true)}
 					className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
 				>
 					Submit Feedback
@@ -24,7 +16,7 @@ function FeedbackButton() {
 			</div>
 
 			<Transition appear show={isOpen} as={Fragment}>
-				<Dialog as="div" onClose={closeModal}>
+				<Dialog as="div" onClose={() => setIsOpen(false)}>
 					<Transition.Child
 						as={Fragment}
 						enter="ease-out duration-300"
@@ -50,7 +42,7 @@ function FeedbackButton() {
 							>
 								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
 									<div className="flex justify-end">
-										<button type="button" className="" onClick={closeModal}>
+										<button type="button" className="" onClick={() => setIsOpen(false)}>
 											X
 										</button>
 									</div>
