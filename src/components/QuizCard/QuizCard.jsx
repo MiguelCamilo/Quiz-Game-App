@@ -19,13 +19,13 @@ export default function QuizCard({
 	};
 
 	return (
-		<div className="mt-20 ml-3">
+		<div className="mt-20">
 			<h2 className="text-white text-left text-4xl font-black font-mono mb-5">
 				Random Quiz Game
 			</h2>
 
 			{/* quiz card container */}
-			<div className="flex flex-grow flex-col bg-white h-[38rem] w-[23rem] md:h-[43rem] md:w-[35rem] rounded-xl">
+			<div className="flex flex-grow flex-col bg-white h-[36rem] w-[23rem] md:h-[38rem] md:w-[35rem] rounded-xl">
 				{/* top portion container */}
 				<div className="flex space-x-[8rem] sm:space-x-[20rem]">
 					<p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">
@@ -54,7 +54,7 @@ export default function QuizCard({
 						{data[questionId].question}
 					</p>
 				</div>
-				<div className="flex flex-col items-center justify-center space-y-5 mt-10">
+				<div className="flex flex-col items-center justify-center space-y-5 mt-5">
 					{data[questionId].options.map((results, index) => (
 						<div key={index}>
 							<button

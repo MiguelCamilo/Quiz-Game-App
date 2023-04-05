@@ -1,14 +1,15 @@
 import "../App.css";
 
-
 import Footer from "../components/QuizCard/Footer";
 
 export default function Login() {
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen bg-img">
+			<h2 className="text-2xl font-normal google-font text-white mt-[10rem] -mb-[14rem] sm:mt-[16rem]">
+				Random Quiz Game!
+			</h2>
 			{/* login card container */}
-			<div className="mt-auto bg-white h-[16rem] w-[23rem] rounded-lg">               
-            <h2 className="text-center text-4xl font-normal google-font text-purple-500 mt-2">Welcome!</h2> 
+			<div className="mt-auto bg-white h-[16rem] w-[23rem] rounded-lg">
 				{/* form container */}
 				<form
 					action=""
@@ -25,10 +26,8 @@ export default function Login() {
 						placeholder="Password"
 					/>
 					{/* button */}
-                    <div className="group mt-2 mr-8 sm:mr-14">
-						<button							
-							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg"
-						>
+					<div className="group mt-2 mr-8 sm:mr-14">
+						<button className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg">
 							<div className="p-2 px-[9.4rem] duration-150 bg-orange-500 rounded-lg group-hover:bg-orange-600">
 								Play
 							</div>

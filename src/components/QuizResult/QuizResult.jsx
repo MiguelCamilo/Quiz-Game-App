@@ -1,6 +1,6 @@
 export default function QuizResult({ length, score, handle_reset }) {
 	return (
-		<div className="mt-20 ml-3">
+		<div className="mt-20">
 			<h2 className="text-white text-left text-4xl font-black font-mono mb-5">
 				Random Quiz Game
 			</h2>
