@@ -20,20 +20,17 @@ export default function QuizCard({
 
 	return (
 		<div className="mt-20">
-			<h2 className="text-white text-left text-4xl font-black font-mono mb-5">
+			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
 
 			{/* quiz card container */}
-			<div className="flex flex-grow flex-col bg-white h-[36rem] w-[23rem] md:h-[38rem] md:w-[35rem] rounded-xl">
+			<div className="flex flex-grow flex-col bg-white h-[42rem] w-[23rem] md:h-[38rem] md:w-[35rem] rounded-xl">
 				{/* top portion container */}
 				<div className="flex space-x-[8rem] sm:space-x-[20rem]">
-					<p className="text-start text-lg font-bold text-[#2F527B] pt-5 pl-5">
+					<p className="text-start text-lg font-bold text-[#2F527B] pt-8 pl-5">
 						Question {questionId + 1} of {length}
 					</p>
-
-                    {/* <button class="bg-blue-500 text-white px-4 py-2 rounded-md active:bg-transparent focus:outline-none">Click me!</button> */}
-
 
 					{/* button container */}
 					<div className="group mt-5">
@@ -49,8 +46,8 @@ export default function QuizCard({
 				</div>
 
 				{/* question container */}
-				<div className="flex justify-center mt-10">
-					<p className="text-[#2F527B] text-center text-[18px] sm:text-[24px] font-bold">
+				<div className="flex justify-center mt-8">
+					<p className="text-[#2F527B] text-center text-[18px] sm:text-[24px] font-bold ">
 						{data[questionId].question}
 					</p>
 				</div>
@@ -59,7 +56,7 @@ export default function QuizCard({
 						<div key={index}>
 							<button
 								onClick={() => handle_question(results.isCorrect)}
-								className="border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[250px] sm:w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold"
+								className="border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[250px] sm:w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold google-font"
 							>
 								{results.answer}
 							</button>
