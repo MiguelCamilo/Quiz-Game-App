@@ -10,7 +10,6 @@ export default function QuizCard({
 }) {
 	const skip_question = () => {
 		const next_question = questionId + 1;
-
 		next_question < length ? setQuestionId(next_question) : setShowScore(true);
 	};
 
