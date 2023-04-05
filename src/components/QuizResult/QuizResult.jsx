@@ -1,3 +1,5 @@
+import FeedbackButton from "../FeedbackButton/FeedbackButton";
+
 export default function QuizResult({ length, score, handle_reset }) {
 	return (
 		<div className="mt-20">
@@ -31,6 +33,8 @@ export default function QuizResult({ length, score, handle_reset }) {
 						Try Again
 					</div>
 				</button>
+
+				<FeedbackButton />
 			</div>
 		</div>
 	);

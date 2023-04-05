@@ -31,33 +31,33 @@ export default function Quiz() {
     }
 
 	return (
-        <div className="flex flex-col justify-center items-center h-screen w-screen">
-        {showScore
-            ?<QuizResult 
-                length={length}
-                score={score}
-                handle_reset={handle_reset}
-            />
-            : <QuizCard 
-                data={data}
-                length={length}
-                questionId={questionId}
-                handle_question={handle_question}
-                score={score}
-                setQuestionId={setQuestionId}
-                setShowScore={setShowScore}
-            />
-        }
+    //     <div className="flex flex-col justify-center items-center h-screen w-screen">
+    //     {showScore
+    //         ?<QuizResult 
+    //             length={length}
+    //             score={score}
+    //             handle_reset={handle_reset}
+    //         />
+    //         : <QuizCard 
+    //             data={data}
+    //             length={length}
+    //             questionId={questionId}
+    //             handle_question={handle_question}
+    //             score={score}
+    //             setQuestionId={setQuestionId}
+    //             setShowScore={setShowScore}
+    //         />
+    //     }
   
-        <div className="flex-grow"></div>
+    //     <div className="flex-grow"></div>
 
-        <div className="mt-auto"> 
-          <Footer />
-        </div>
-      </div>
+    //     <div className="mt-auto"> 
+    //       <Footer />
+    //     </div>
+    //   </div>
 
-    // <>
-    //     <Login/>
-    // </>
+    <>
+        <Login/>
+    </>
 	);
 }
