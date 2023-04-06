@@ -4,6 +4,7 @@ import QuizCard from "../QuizCard/QuizCard";
 import QuizResult from "../QuizResult/QuizResult";
 import Footer from "../QuizCard/Footer";
 import Login from "../../pages/Login";
+import AudioBtn from "../QuizCard/AudioBtn";
 
 import { data } from "../../data/quiz_data";
 
@@ -29,15 +30,7 @@ export default function Quiz() {
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen">
-			<button
-				// onClick={skip_question}
-				className="w-[10%] transition-all duration-150 bg-red-700 font-bold text-white border-b-8 border-b-red-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-red-700 group-hover:border-t-red-700 group-hover:shadow-lg"
-			>
-				<div className="p-2 px-3 duration-150 bg-red-500 rounded-lg group-hover:bg-red-700 google-font text-[10px]">
-					Skip
-				</div>
-			</button>
-
+            <AudioBtn/>
 			{showScore ? (
 				<QuizResult length={length} score={score} handle_reset={handle_reset} />
 			) : (

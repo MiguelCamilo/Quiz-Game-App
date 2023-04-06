@@ -1,5 +1,4 @@
 
-
 export default function QuizCard({
 	data,
 	length,
@@ -19,7 +18,7 @@ export default function QuizCard({
 	};
 
 	return (
-		<div className="mt-20">
+		<div className="mt-10">
 			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
