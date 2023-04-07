@@ -18,7 +18,7 @@ export default function QuizCard({
 	};
 
 	return (
-		<div className="mt-10">
+		<div className="mt-3">
 			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
