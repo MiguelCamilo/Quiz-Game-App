@@ -30,7 +30,7 @@ export default function Quiz() {
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen">
-            <AudioBtn/>
+            {/* <AudioBtn/> */}
 			{showScore ? (
 				<QuizResult length={length} score={score} handle_reset={handle_reset} />
 			) : (

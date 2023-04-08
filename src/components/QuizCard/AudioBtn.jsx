@@ -4,7 +4,7 @@ import { PlayIcon } from "@heroicons/react/20/solid";
 import { useState, useEffect } from "react";
 
 // import music file
-import music from "/music.mp3";
+// import music from "/music.mp3";
 
 export default function AudioBtn() {
 	const [audio, setAudio] = useState(true);
