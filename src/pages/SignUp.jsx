@@ -3,24 +3,20 @@ import { Link } from "react-router-dom";
 
 import Footer from "../components/QuizCard/Footer";
 import FeedbackButton from "../components/FeedbackButton/FeedbackButton";
-import SignUp from "./SignUp";
 
 import "../App.css";
 import { firebaseConfig } from "../firebase.config";
 
 // firebase auth
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
-import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	signInWithPopup,
-	GoogleAuthProvider,
-	getAuth,
-} from "firebase/auth";
+// import {
+// 	createUserWithEmailAndPassword,
+// 	signInWithEmailAndPassword,
+// 	signInWithPopup,
+// 	GoogleAuthProvider,
+// } from "firebase/auth";
 
-export default function Login() {
+export default function SignUp() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -34,7 +30,7 @@ export default function Login() {
 			{/* login card container */}
 			<div className="mt-auto bg-white h-[24rem] w-[23rem] rounded-lg">
 				<h4 className="text-center google-font text-gray-700 mt-7 mb-4">
-					Welcome, log in!
+					Sign up!
 				</h4>
 				{/* form container */}
 				<form className="flex flex-col justify-center items-center h-[15rem]">
@@ -80,10 +76,8 @@ export default function Login() {
 				</form>
 
 				<div className="mt-4 text-center">
-					<p className="text-[10px] google-font">Dont have an account?</p>
-					<Link to="signup" className="text-blue-600 text-[13px] google-font">
-						Sign up here
-					</Link>
+					<p className="text-[10px] google-font">Already have an account?</p>					
+					<Link to='/' className="text-blue-600 text-[13px] google-font">Log in here</Link>
 				</div>
 			</div>
 			<div className="mt-auto">
