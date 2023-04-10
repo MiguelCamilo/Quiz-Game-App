@@ -29,7 +29,7 @@ export default function QuizResult({ length, score, handle_reset }) {
 
 				{/* try again button */}
 				<button onClick={handle_reset} className="text-center">
-					<div className="ml-[6.2rem] mt-[5rem] sm:ml-[145px] sm:mt-[10rem] w-[80%] sm:w-[100%] p-5 border-2 border-[#6066D0B2] rounded-xl hover:bg-[#F9A826] hover:border-[#F9A826] hover:text-white text-[#6066D0B2] font-bold">
+					<div className="ml-[6.2rem] mt-[5rem] sm:ml-[145px] sm:mt-[7rem] w-[80%] sm:w-[100%] p-5 border-2 border-[#6066D0B2] rounded-xl hover:bg-[#F9A826] hover:border-[#F9A826] hover:text-white text-[#6066D0B2] font-bold">
 						Try Again
 					</div>
 				</button>

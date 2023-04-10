@@ -18,7 +18,7 @@ export default function QuizCard({
 	};
 
 	return (
-		<div className="mt-3">
+		<div className="mt-16">
 			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
@@ -46,7 +46,7 @@ export default function QuizCard({
 
 				{/* question container */}
 				<div className="flex justify-center mt-8">
-					<p className="text-[#2F527B] text-center text-[18px] sm:text-[13px] google-font font-bold ">
+					<p className="text-[#F9A826] text-center text-[18px] sm:text-[13px] google-font font-bold ">
 						{data[questionId].question}
 					</p>
 				</div>

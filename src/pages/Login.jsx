@@ -3,28 +3,55 @@ import { Link } from "react-router-dom";
 
 import Footer from "../components/QuizCard/Footer";
 import FeedbackButton from "../components/FeedbackButton/FeedbackButton";
-import SignUp from "./SignUp";
 
 import "../App.css";
-import { firebaseConfig } from "../firebase.config";
 
 // firebase auth
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { auth, provider } from "../firebase.config";
 import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
 	signInWithPopup,
-	GoogleAuthProvider,
-	getAuth,
+	signInWithEmailAndPassword,
+	createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ setIsAuth }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	const app = initializeApp(firebaseConfig);
+	const navigate = useNavigate();
+
+	const googleLogin = () => {
+		signInWithPopup(auth, provider)
+			.then((result) => {
+				setIsAuth(true);
+				localStorage.setItem("isAuth", true);
+				navigate("/quiz");
+				// the reason for JSON.stringify is that local storage can only store string
+				localStorage.setItem(
+					"userName",
+					JSON.stringify(result.user.displayName)
+				);
+				localStorage.setItem("userName", JSON.stringify(result.user.photoURL));
+			})
+			.catch((err) => console.error(err));
+	};
+
+	const handleLogin = () => {
+		signInWithEmailAndPassword(auth, email, password)
+			.then((result) => {
+				navigate("/quiz");
+				setIsAuth(true)
+				localStorage.setItem(
+					"userName",
+					JSON.stringify(result.user.displayName)
+				);
+				localStorage.setItem("userName", JSON.stringify(result.user.photoURL));
+			})
+			.catch((err) => {
+				console.alert(err.message);
+			});
+	};
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen bg-img">
@@ -56,7 +83,10 @@ export default function Login() {
 					/>
 					{/* button */}
 					<div className="group mt-2 mr-8 sm:mr-14">
-						<button className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg">
+						<button
+							onClick={handleLogin}
+							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg"
+						>
 							<div className="p-2 px-[8.5rem] duration-150 bg-orange-500 rounded-lg group-hover:bg-orange-600 google-font">
 								Play
 							</div>
@@ -65,6 +95,7 @@ export default function Login() {
 
 					{/* google auth button */}
 					<button
+						onClick={googleLogin}
 						aria-label="Continue with google"
 						role="button"
 						className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-[90%] mt-10 hover:translate-y-0.5 duration-150"

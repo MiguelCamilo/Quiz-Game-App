@@ -12,7 +12,7 @@ export const data = [
 	},
 	{
 		id: "2",
-		question: "Whos is the first president of United States?",
+		question: "Whos was the first president of United States?",
 		options: [
 			{ answer: "John Adams", isCorrect: false },
 			{ answer: "Obama", isCorrect: false },
@@ -22,7 +22,7 @@ export const data = [
 	},
 	{
 		id: "3",
-		question: "How many bones do sharks have?",
+		question: "How many bones does a shark have?",
 		options: [
 			{ answer: "112", isCorrect: false },
 			{ answer: "13", isCorrect: false },
