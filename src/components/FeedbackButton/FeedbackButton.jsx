@@ -1,5 +1,5 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { useState, Fragment } from "react";
+import { Dialog, Transition } from '@headlessui/react';
+import { useState, Fragment } from 'react';
 
 function FeedbackButton() {
 	let [isOpen, setIsOpen] = useState(false);
@@ -42,7 +42,11 @@ function FeedbackButton() {
 							>
 								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
 									<div className="flex justify-end">
-										<button type="button" className="" onClick={() => setIsOpen(false)}>
+										<button
+											type="button"
+											className=""
+											onClick={() => setIsOpen(false)}
+										>
 											X
 										</button>
 									</div>
@@ -50,7 +54,7 @@ function FeedbackButton() {
 										as="h3"
 										className="text-lg font-medium leading-6 text-gray-900 text-center"
 									>
-										Got <span className="line-through text-gray-400">Milk</span>{" "}
+										Got <span className="line-through text-gray-400">Milk</span>{' '}
 										Feedback?
 									</Dialog.Title>
 									<div className="mt-2">
@@ -71,12 +75,12 @@ function FeedbackButton() {
 												<input
 													className="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 													id="name"
-                                                    name="name"
+													name="name"
 													type="text"
 													placeholder="Name"
-                                                    required
+													required
 												/>
-                                                <input type="hidden" name="_gotcha" className="gtcha"/>
+												<input type="hidden" name="_gotcha" className="gtcha" />
 											</div>
 
 											<div className="mb-4">
@@ -89,10 +93,10 @@ function FeedbackButton() {
 												<input
 													className="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 													id="email"
-                                                    name="email"
+													name="email"
 													type="email"
 													placeholder="Email"
-                                                    required
+													required
 												/>
 											</div>
 
@@ -106,9 +110,9 @@ function FeedbackButton() {
 												<textarea
 													className="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 													id="feedback"
-                                                    name="feedback"
+													name="feedback"
 													placeholder="What could we improve on?"
-                                                    required
+													required
 												></textarea>
 											</div>
 

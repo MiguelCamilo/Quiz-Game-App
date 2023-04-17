@@ -1,55 +1,60 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import Footer from "../components/QuizCard/Footer";
-import FeedbackButton from "../components/FeedbackButton/FeedbackButton";
+import Footer from '../components/QuizCard/Footer';
+import FeedbackButton from '../components/FeedbackButton/FeedbackButton';
 
-import "../App.css";
+//! firebase auth
+import { auth, provider } from '../firebase.config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
-// firebase auth
-import { auth, provider } from "../firebase.config";
-import {
-	signInWithPopup,
-	signInWithEmailAndPassword,
-	createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import '../App.css';
 
 export default function Login({ setIsAuth }) {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
 
 	const navigate = useNavigate();
+	const { googleSignIn, user } = UserAuth();
 
-	const googleLogin = () => {
-		signInWithPopup(auth, provider)
-			.then((result) => {
-				setIsAuth(true);
-				localStorage.setItem("isAuth", true);
-				navigate("/quiz");
-				// the reason for JSON.stringify is that local storage can only store string
-				localStorage.setItem(
-					"userName",
-					JSON.stringify(result.user.displayName)
-				);
-				localStorage.setItem("userName", JSON.stringify(result.user.photoURL));
-			})
-			.catch((err) => console.error(err));
+	const handleGoogleLogin = async () => {
+		try {
+			await googleSignIn();
+		} catch (err) {
+			console.error(err);
+		}
 	};
 
-	const handleLogin = () => {
+	// if the user is logged in the redirect
+	// and it will run everytime the user state updates
+	useEffect(() => {
+		if (user != null) {
+			navigate('/quiz');
+		}
+	}, [user]);
+
+	//TODO: throw err warning if password is 6 char or less
+	const handleLogin = (e) => {
+		e.preventDefault();
+		if (email.length === 0 || password.length === 0) {
+			return alert('Please enter a valid email and password');
+		}
+
 		signInWithEmailAndPassword(auth, email, password)
 			.then((result) => {
-				navigate("/quiz");
-				setIsAuth(true)
+				navigate('/quiz');
+				setIsAuth(true);
 				localStorage.setItem(
-					"userName",
+					'userName',
 					JSON.stringify(result.user.displayName)
 				);
-				localStorage.setItem("userName", JSON.stringify(result.user.photoURL));
+				localStorage.setItem('userName', JSON.stringify(result.user.photoURL));
 			})
-			.catch((err) => {
-				console.alert(err.message);
+			.catch((error) => {
+				setError(error.message)
 			});
 	};
 
@@ -92,10 +97,14 @@ export default function Login({ setIsAuth }) {
 							</div>
 						</button>
 					</div>
+					{/* render google error if no user is created */}
+					{error 
+						&& <div className='text-sm font-bold text-red-600 pt-2'>Email or Password is incorrect.</div>
+					}
 
 					{/* google auth button */}
 					<button
-						onClick={googleLogin}
+						onClick={handleGoogleLogin}
 						aria-label="Continue with google"
 						role="button"
 						className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-[90%] mt-10 hover:translate-y-0.5 duration-150"

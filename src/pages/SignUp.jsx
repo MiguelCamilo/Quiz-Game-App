@@ -1,29 +1,30 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import Footer from "../components/QuizCard/Footer";
-import FeedbackButton from "../components/FeedbackButton/FeedbackButton";
+import Footer from '../components/QuizCard/Footer';
+import FeedbackButton from '../components/FeedbackButton/FeedbackButton';
 
 // firebase auth
-import { auth } from "../firebase.config";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { auth } from '../firebase.config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-import "../App.css";
+import '../App.css';
 
 export default function SignUp() {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 
-    const navigate = useNavigate()
+	const navigate = useNavigate();
 
-    const handleSignIn = () => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then (
-                navigate("/quiz")
-            )
-            .catch(err => console.error(err))
-    }
+	const handleSignIn = () => {
+		if (email.length === 0 || password.length === 0) {
+			return alert('Please enter a valid email and password');
+		}
+		createUserWithEmailAndPassword(auth, email, password)
+			.then(navigate('/quiz'))
+			.catch((err) => console.error(err));
+	};
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen bg-img">
 			<h2 className="text-xl sm:text-xl text-center font-normal google-font text-white mt-[10rem] -mb-[10rem] sm:-mb-[8rem] sm:mt-[10rem]">
@@ -35,7 +36,7 @@ export default function SignUp() {
 					Sign up!
 				</h4>
 				{/* form container */}
-				<form className="flex flex-col justify-center items-center h-[15rem]">
+				<form className="flex flex-col justify-center items-center h-[12rem]">
 					<input
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
@@ -54,7 +55,11 @@ export default function SignUp() {
 					/>
 					{/* button */}
 					<div className="group mt-2 mr-8 sm:mr-14">
-						<button type="submit" onClick={handleSignIn} className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg">
+						<button
+							type="submit"
+							onClick={handleSignIn}
+							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg"
+						>
 							<div className="p-2 px-[8.5rem] duration-150 bg-orange-500 rounded-lg group-hover:bg-orange-600 google-font">
 								Play
 							</div>
@@ -69,6 +74,7 @@ export default function SignUp() {
 					</Link>
 				</div>
 			</div>
+
 			<div className="mt-auto">
 				<div className="mb-5">
 					<FeedbackButton />

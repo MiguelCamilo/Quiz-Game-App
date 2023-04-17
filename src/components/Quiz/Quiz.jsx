@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import QuizCard from "../QuizCard/QuizCard";
-import QuizResult from "../QuizResult/QuizResult";
-import Footer from "../QuizCard/Footer";
-import Login from "../../pages/Login";
-import AudioBtn from "../QuizCard/AudioBtn";
+import QuizCard from '../QuizCard/QuizCard';
+import QuizResult from '../QuizResult/QuizResult';
+import Footer from '../QuizCard/Footer';
+import Login from '../../pages/Login';
+import AudioBtn from '../QuizCard/AudioBtn';
 
-import { data } from "../../data/quiz_data";
+import { data } from '../../data/quiz_data';
 
 export default function Quiz() {
 	const [questionId, setQuestionId] = useState(0);
@@ -30,7 +30,7 @@ export default function Quiz() {
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen">
-            {/* <AudioBtn/> */}
+			{/* <AudioBtn/> */}
 			{showScore ? (
 				<QuizResult length={length} score={score} handle_reset={handle_reset} />
 			) : (
