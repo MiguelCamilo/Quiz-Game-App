@@ -1,4 +1,5 @@
-
+import { UserAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function QuizCard({
 	data,
@@ -8,6 +9,18 @@ export default function QuizCard({
 	setQuestionId,
 	setShowScore,
 }) {
+	const navigate = useNavigate();
+	const { googleSignOut, user } = UserAuth();
+
+	const handleSignOut = async () => {
+		try {
+			await googleSignOut();
+			navigate('/');
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	const skip_question = () => {
 		const next_question = questionId + 1;
 		next_question < length ? setQuestionId(next_question) : setShowScore(true);
@@ -19,7 +32,25 @@ export default function QuizCard({
 	};
 
 	return (
-		<div className="mt-20">
+		<div className="mt-16">
+			{/* user name */}
+			<div className="flex flex-col absolute top-0 left-0 m-[1rem]">
+				<p className="google-font text-sm text-white text-center hidden md:block">
+					Welcome!
+				</p>
+				<p className="google-font text-sm text-white">{user?.displayName}</p>
+			</div>
+			{/* log out btn */}
+			<div className="group absolute top-0 right-0 m-[1rem]">
+				<button
+					onClick={handleSignOut}
+					className="w-20% transition-all duration-150 bg-red-700 font-bold text-white border-b-8 border-b-red-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-red-700 group-hover:border-t-red-700 group-hover:shadow-lg"
+				>
+					<div className="p-2 px-3 duration-150 bg-red-500 rounded-lg group-hover:bg-red-700 google-font text-[10px]">
+						Logout
+					</div>
+				</button>
+			</div>
 			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
@@ -27,18 +58,18 @@ export default function QuizCard({
 			{/* quiz card container */}
 			<div className="flex flex-grow flex-col bg-white h-[42rem] w-[23rem] md:h-[38rem] md:w-[35rem] rounded-xl">
 				{/* top portion container */}
-				<div className="flex space-x-[8rem] sm:space-x-[20rem]">
-					<p className="text-start text-lg font-bold text-[#2F527B] pt-8 pl-5">
+				<div className="flex space-x-[2rem] sm:space-x-[14rem]">
+					<p className="text-start text-[16px] google-font font-bold text-[#2F527B] pt-8 pl-5">
 						Question {questionId + 1} of {length}
 					</p>
 
 					{/* button container */}
-					<div className="group mt-5">
+					<div className="group mt-6 sm:mt-5">
 						<button
 							onClick={skip_question}
 							className="w-full transition-all duration-150 bg-red-700 font-bold text-white border-b-8 border-b-red-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-red-700 group-hover:border-t-red-700 group-hover:shadow-lg"
 						>
-							<div className="p-2 px-4 duration-150 bg-red-500 rounded-lg group-hover:bg-red-700">
+							<div className="p-2 px-3 duration-150 bg-red-500 rounded-lg group-hover:bg-red-700 google-font text-[10px]">
 								Skip
 							</div>
 						</button>
@@ -47,7 +78,7 @@ export default function QuizCard({
 
 				{/* question container */}
 				<div className="flex justify-center mt-8">
-					<p className="text-[#2F527B] text-center text-[18px] sm:text-[24px] font-bold ">
+					<p className="text-[#F9A826] text-center text-[18px] sm:text-[13px] google-font font-bold ">
 						{data[questionId].question}
 					</p>
 				</div>
@@ -69,7 +100,7 @@ export default function QuizCard({
 							onClick={back_button}
 							className="rm-hover w-[80%] ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-yellow-700 font-bold text-white border-b-8 border-b-yellow-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-yellow-700 group-hover:border-t-yellow-700 group-hover:shadow-lg"
 						>
-							<div className="p-2 px-4 duration-150 bg-yellow-500 rounded-lg group-hover:bg-yellow-700">
+							<div className="p-2 px-4 duration-150 bg-yellow-500 rounded-lg group-hover:bg-yellow-700 google-font">
 								Back
 							</div>
 						</button>
