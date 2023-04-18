@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
-
+ 
 import Quiz from './components/Quiz/Quiz';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ChooseQuiz from './components/ChooseQuiz/ChooseQuiz';
 import Protected from './context/Protected';
 import { AuthContextProvider } from './context/AuthContext';
 
@@ -14,6 +14,14 @@ function App() {
 		<>
 			<AuthContextProvider>
 				<Routes>
+          <Route 
+            path='/choose-quiz'
+            element={
+              <Protected>
+                <ChooseQuiz/>
+              </Protected>
+            }
+          />
 					<Route
 						path="/quiz"
 						element={

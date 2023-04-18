@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { UserAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +11,8 @@ export default function QuizCard({
 	setQuestionId,
 	setShowScore,
 }) {
-	
+	const [userName, setUserName] = useState('');
+
 	const navigate = useNavigate();
 	const { googleSignOut, user } = UserAuth();
 

@@ -51,12 +51,14 @@ export default function Login({ setIsAuth }) {
 					'userName',
 					JSON.stringify(result.user.displayName)
 				);
-				localStorage.setItem('userName', JSON.stringify(result.user.photoURL));
+				localStorage.setItem('userPhoto', JSON.stringify(result.user.photoURL));
 			})
 			.catch((error) => {
 				setError(error.message)
 			});
 	};
+
+
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen bg-img">
@@ -97,7 +99,7 @@ export default function Login({ setIsAuth }) {
 							</div>
 						</button>
 					</div>
-					{/* render google error if no user is created */}
+					{/* render google error if the user does not exist */}
 					{error 
 						&& <div className='text-sm font-bold text-red-600 pt-2'>Email or Password is incorrect.</div>
 					}

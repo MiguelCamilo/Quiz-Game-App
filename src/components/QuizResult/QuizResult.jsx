@@ -20,7 +20,7 @@ export default function QuizResult({ length, score, handle_reset }) {
 	return (
 		<>
 			<div className="mt-20">
-				<div className='absolute bottom-0 left-0 m-[1rem]'>
+				<div className='absolute bottom-0 right-0 m-[1rem]'>
 					<FeedbackButton />
 				</div>
 				<div className="group absolute top-0 right-0 m-[1rem]">
