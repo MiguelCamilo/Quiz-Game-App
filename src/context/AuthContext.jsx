@@ -16,7 +16,7 @@ export const AuthContextProvider = ({ children }) => {
 	const [user, setUser] = useState({})
 
     const googleSignIn = () => {
-        signInWithRedirect(auth, provider)
+        signInWithPopup(auth, provider)
     }
 
 	const googleSignOut = () => {

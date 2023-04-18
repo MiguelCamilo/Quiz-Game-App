@@ -32,7 +32,7 @@ export default function Login({ setIsAuth }) {
 	// and it will run everytime the user state updates
 	useEffect(() => {
 		if (user != null) {
-			navigate('/quiz');
+			navigate('/choose-quiz');
 		}
 	}, [user]);
 
