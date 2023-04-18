@@ -9,6 +9,7 @@ export default function QuizCard({
 	setQuestionId,
 	setShowScore,
 }) {
+	
 	const navigate = useNavigate();
 	const { googleSignOut, user } = UserAuth();
 
