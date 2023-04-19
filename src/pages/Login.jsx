@@ -61,7 +61,7 @@ export default function Login({ setIsAuth }) {
 
 
 	return (
-		<div className="flex flex-col justify-center items-center h-screen w-screen bg-img">
+		<div className="flex flex-col justify-center items-center h-screen w-screen">
 			<h2 className="text-xl sm:text-xl text-center font-normal google-font text-white mt-[10rem] -mb-[10rem] sm:-mb-[8rem] sm:mt-[10rem]">
 				Random Quiz Game!
 			</h2>
@@ -73,6 +73,7 @@ export default function Login({ setIsAuth }) {
 				{/* form container */}
 				<form className="flex flex-col justify-center items-center h-[15rem]">
 					<input
+						autoComplete='username'					
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						type="email"
@@ -81,6 +82,7 @@ export default function Login({ setIsAuth }) {
 						required
 					/>
 					<input
+						autoComplete="current-password"						
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						type="password"
@@ -92,9 +94,9 @@ export default function Login({ setIsAuth }) {
 					<div className="group mt-2 mr-8 sm:mr-14">
 						<button
 							onClick={handleLogin}
-							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-orange-600 font-bold text-white border-b-8 border-b-orange-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-orange-600 group-hover:border-t-orange-600 group-hover:shadow-lg"
+							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-[#c08d40] font-bold text-white border-b-8 border-b-[#e3a64b] rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-[#FF9800] group-hover:border-t-[#FF9800] group-hover:shadow-lg"
 						>
-							<div className="p-2 px-[8.5rem] duration-150 bg-orange-500 rounded-lg group-hover:bg-orange-600 google-font">
+							<div className="p-2 px-[8.5rem] duration-150 bg-[#FF9800] rounded-lg group-hover:bg-[#FF9800] google-font">
 								Play
 							</div>
 						</button>

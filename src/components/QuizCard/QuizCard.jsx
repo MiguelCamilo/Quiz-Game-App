@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import LogOutBtn from '../LogoutBtn/LogOutBtn';
 import { UserAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 export default function QuizCard({
 	data,
@@ -15,15 +15,6 @@ export default function QuizCard({
 
 	const navigate = useNavigate();
 	const { googleSignOut, user } = UserAuth();
-
-	const handleSignOut = async () => {
-		try {
-			await googleSignOut();
-			navigate('/');
-		} catch (err) {
-			console.error(err);
-		}
-	};
 
 	const skip_question = () => {
 		const next_question = questionId + 1;
@@ -45,16 +36,7 @@ export default function QuizCard({
 				<p className="google-font text-sm text-white">{user?.displayName}</p>
 			</div>
 			{/* log out btn */}
-			<div className="group absolute top-0 right-0 m-[1rem]">
-				<button
-					onClick={handleSignOut}
-					className="w-20% transition-all duration-150 bg-red-700 font-bold text-white border-b-8 border-b-red-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-red-700 group-hover:border-t-red-700 group-hover:shadow-lg"
-				>
-					<div className="p-2 px-3 duration-150 bg-red-500 rounded-lg group-hover:bg-red-700 google-font text-[10px]">
-						Logout
-					</div>
-				</button>
-			</div>
+			<LogOutBtn />
 			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
