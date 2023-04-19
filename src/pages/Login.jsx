@@ -94,9 +94,9 @@ export default function Login({ setIsAuth }) {
 					<div className="group mt-2 mr-8 sm:mr-14">
 						<button
 							onClick={handleLogin}
-							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-[#c08d40] font-bold text-white border-b-8 border-b-[#e3a64b] rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-[#FF9800] group-hover:border-t-[#FF9800] group-hover:shadow-lg"
+							className="rm-hover ml-8 sm:ml-[3.5rem] transition-all duration-150 bg-green-700 font-bold text-white border-b-8 border-b-green-600 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-green-700 group-hover:border-t-green-700 group-hover:shadow-lg"
 						>
-							<div className="p-2 px-[8.5rem] duration-150 bg-[#FF9800] rounded-lg group-hover:bg-[#FF9800] google-font">
+							<div className="p-2 px-[8.5rem] duration-150 bg-green-700 rounded-lg group-hover:bg-green-700 google-font">
 								Play
 							</div>
 						</button>
