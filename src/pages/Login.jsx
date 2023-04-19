@@ -45,7 +45,7 @@ export default function Login({ setIsAuth }) {
 
 		signInWithEmailAndPassword(auth, email, password)
 			.then((result) => {
-				navigate('/quiz');
+				navigate('/choose-quiz');
 				setIsAuth(true);
 				localStorage.setItem(
 					'userName',
