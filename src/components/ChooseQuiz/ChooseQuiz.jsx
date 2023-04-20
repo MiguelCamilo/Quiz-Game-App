@@ -20,9 +20,9 @@ export default function ChooseQuiz() {
 						
 						<p className="py-6 google-font text-white mt-2">Choose A Quiz to try out.</p>
 						{/* START grid container for games */}
-						<div className="flex flex-row w-full space-x-4">
+						<div className="flex flex-col sm:flex-row w-full justify-center items-center space-x-4">
 							{/* first card */}
-							<div className="card w-96 bg-base-100 shadow-xl image-full">
+							<div className="card w-96 mb-5 bg-base-100 shadow-xl image-full">
 								{/* <figure>
 									<img src="/public/vite.svg" alt="Shoes" />
 								</figure> */}

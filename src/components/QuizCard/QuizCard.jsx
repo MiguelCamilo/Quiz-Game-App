@@ -41,10 +41,10 @@ export default function QuizCard({
 			</h2>
 
 			{/* quiz card container */}
-			<div className="flex flex-grow flex-col bg-white h-[42rem] w-[23rem] md:h-[38rem] md:w-[35rem] rounded-xl">
+			<div className="flex flex-grow flex-col">
 				{/* top portion container */}
 				<div className="flex space-x-[2rem] sm:space-x-[14rem]">
-					<p className="text-start text-[16px] google-font font-bold text-[#2F527B] pt-8 pl-5">
+					<p className="text-start text-[16px] google-font font-bold text-white pt-8 pl-5">
 						Question {questionId + 1} of {length}
 					</p>
 
@@ -72,7 +72,7 @@ export default function QuizCard({
 						<div key={index}>
 							<button
 								onClick={() => handle_question(results.isCorrect)}
-								className="border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[250px] sm:w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold google-font"
+								className="bg-white border-2 border-[#6066D0B2] hover:border-[#F9A826] duration-200 rounded-xl w-[250px] sm:w-[400px] p-[1rem] hover:bg-[#F9A826] text-[#6066D0B2] hover:text-white font-bold google-font"
 							>
 								{results.answer}
 							</button>
