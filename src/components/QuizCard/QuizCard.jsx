@@ -12,10 +12,8 @@ export default function QuizCard({
 	setQuestionId,
 	setShowScore,
 }) {
-	const [userName, setUserName] = useState('');
-
 	const navigate = useNavigate();
-	const { googleSignOut, user } = UserAuth();
+	const { user } = UserAuth();
 
 	const skip_question = () => {
 		const next_question = questionId + 1;

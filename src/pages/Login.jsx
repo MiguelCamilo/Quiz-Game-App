@@ -5,14 +5,14 @@ import Footer from '../components/QuizCard/Footer';
 import FeedbackButton from '../components/FeedbackButton/FeedbackButton';
 
 //! firebase auth
-import { auth, provider } from '../firebase.config';
+import { auth } from '../firebase.config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 import '../App.css';
 
-export default function Login({ setIsAuth }) {
+export default function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
@@ -46,12 +46,7 @@ export default function Login({ setIsAuth }) {
 		signInWithEmailAndPassword(auth, email, password)
 			.then((result) => {
 				navigate('/choose-quiz');
-				setIsAuth(true);
-				localStorage.setItem(
-					'userName',
-					JSON.stringify(result.user.displayName)
-				);
-				localStorage.setItem('userPhoto', JSON.stringify(result.user.photoURL));
+				setEmail(result.user.email)
 			})
 			.catch((error) => {
 				setError(error.message)
@@ -62,11 +57,11 @@ export default function Login({ setIsAuth }) {
 
 	return (
 		<div className="flex flex-col justify-center items-center h-screen w-screen">
-			<h2 className="text-xl sm:text-xl text-center font-normal google-font text-white mt-[10rem] -mb-[10rem] sm:-mb-[8rem] sm:mt-[10rem]">
+			<h2 className="mb-5 text-xl sm:text-xl text-center font-normal google-font text-white">
 				Random Quiz Game!
 			</h2>
 			{/* login card container */}
-			<div className="mt-auto bg-white h-[24rem] w-[23rem] rounded-lg">
+			<div className=" bg-white h-[24rem] w-[23rem] mb-10 rounded-lg">
 				<h4 className="text-center google-font text-gray-700 mt-7 mb-4">
 					Welcome, log in!
 				</h4>
@@ -78,8 +73,7 @@ export default function Login({ setIsAuth }) {
 						onChange={(e) => setEmail(e.target.value)}
 						type="email"
 						className="border-2 border-gray-300 rounded-md mb-2 p-2 w-[90%]"
-						placeholder="Email"
-						required
+						placeholder="Email"						
 					/>
 					<input
 						autoComplete="current-password"						
@@ -87,8 +81,7 @@ export default function Login({ setIsAuth }) {
 						onChange={(e) => setPassword(e.target.value)}
 						type="password"
 						className="border-2 border-gray-300 rounded-md p-2 w-[90%]"
-						placeholder="Password"
-						required
+						placeholder="Password"						
 					/>
 					{/* button */}
 					<div className="group mt-2 mr-8 sm:mr-14">
@@ -130,7 +123,7 @@ export default function Login({ setIsAuth }) {
 					</Link>
 				</div>
 			</div>
-			<div className="mt-auto">
+			<div className="">
 				<div className="mb-5">
 					<FeedbackButton />
 				</div>

@@ -13,9 +13,10 @@ export default function ChooseQuiz() {
 				<div className="hero-content text-center">
 					<LogOutBtn />
 					<div className="max-w-lg">
-						<h1 className="text-2xl font-bold google-font whitespace-nowrap">
-							Welcome, <span className="text-white">{user?.displayName}</span>!
-						</h1>
+						{!user
+							? <h1 className="text-2xl font-bold google-font whitespace-nowrap">Welcome, <span className="text-white">{user?.displayName}</span>!</h1>
+							: <h1 className="text-2xl font-bold google-font whitespace-nowrap">Welcome, <span className="text-white">{user?.email}</span>!</h1>
+						}
 						
 						<p className="py-6 google-font text-white mt-2">Choose A Quiz to try out.</p>
 						{/* START grid container for games */}
