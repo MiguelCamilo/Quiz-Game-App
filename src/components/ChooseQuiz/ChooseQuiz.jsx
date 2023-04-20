@@ -14,8 +14,8 @@ export default function ChooseQuiz() {
 					<LogOutBtn />
 					<div className="max-w-lg">
 						{!user
-							? <h1 className="text-2xl font-bold google-font whitespace-nowrap">Welcome, <span className="text-white">{user?.displayName}</span>!</h1>
-							: <h1 className="text-2xl font-bold google-font whitespace-nowrap">Welcome, <span className="text-white">{user?.email}</span>!</h1>
+							? <h1 className="text-2xl font-bold google-font">Welcome, <span className="text-white">{user?.displayName}</span>!</h1>
+							: <h1 className="font-bold google-font text-sm sm:text-2xl ">Welcome, <span className="text-white">{user?.email}</span>!</h1>
 						}
 						
 						<p className="py-6 google-font text-white mt-2">Choose A Quiz to try out.</p>
@@ -35,9 +35,11 @@ export default function ChooseQuiz() {
 									</p>
 									<div className="group">
 										<button className="w-full transition-all duration-150 bg-green-700 font-bold text-white border-b-8 border-b-green-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-green-700 group-hover:border-t-green-700 group-hover:shadow-lg">
+										<Link to='/quiz'>
 											<div className="p-2 px-3 duration-150 bg-green-500 rounded-lg group-hover:bg-green-700 google-font text-[10px]">
-												<Link to='/quiz'>Play!</Link>
+												Play!
 											</div>
+											</Link>
 										</button>
 									</div>
 								</div>
