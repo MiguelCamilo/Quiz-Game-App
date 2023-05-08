@@ -40,7 +40,7 @@ export default function QuizResult({ length, score, handle_reset }) {
 					{/* results container */}
 					<div className="flex justify-center">
 						<img
-							src="/src/assets/undraw_winners_ao2o 2.svg"
+							src="/undraw_winners_ao2o 2.svg"
 							alt="cartoon people jumping in celebration"
 							className="mt-8"
 						/>

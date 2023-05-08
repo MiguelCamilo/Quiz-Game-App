@@ -23,9 +23,9 @@ export default function ChooseQuiz() {
 						<div className="flex flex-col sm:flex-row">
 							{/* first card */}
 							<div className="card w-96 mb-5 sm:mb-0 bg-base-500 shadow-xl image-full mr-5">
-								{/* <figure>
-									<img src="/public/vite.svg" alt="Shoes" />
-								</figure> */}
+								<figure>
+									<img src="/undraw_adventure_4hum 1.svg" alt="Shoes" />
+								</figure>
 								<div className="card-body rounded-xl">
 									<h2 className="card-title google-font text-[#F9A826] pl-10">
 										Random Quiz
@@ -48,7 +48,7 @@ export default function ChooseQuiz() {
 							{/* second card */}
 							<div className="card w-96 bg-base-500 shadow-xl image-full">
 								{/* <figure>
-									<img src="/public/vite.svg" alt="Shoes" />
+									<img src="/undraw_adventure_4hum 1.svg" alt="Shoes" />
 								</figure> */}
 								<div className="card-body">
 									<h2 className="card-title google-font text-[#23b08a]">

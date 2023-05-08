@@ -1,6 +1,6 @@
 
 :root {
-  background-image: url('./assets//background.png');
+  background-image: url('/background.png');
   scroll-behavior: smooth;
   background-position: center;
 	background-attachment: fixed;
@@ -9,7 +9,7 @@
 }
 
 .bg-img {
-  background-image: url('./assets/login-bg.png');
+  background-image: url('/login-bg.png');
   scroll-behavior: smooth;
   background-position: center;
 	background-attachment: fixed;
