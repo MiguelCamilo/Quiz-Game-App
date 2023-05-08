@@ -21,8 +21,10 @@ export default function Login() {
 	const { googleSignIn, user } = UserAuth();
 
 	const handleGoogleLogin = async () => {
+
 		try {
 			await googleSignIn();
+			navigate('/choose-quiz')
 		} catch (err) {
 			console.error(err);
 		}
@@ -100,7 +102,7 @@ export default function Login() {
 					}
 
 					{/* google auth button */}
-					{/* <button
+					<button
 						onClick={handleGoogleLogin}
 						aria-label="Continue with google"
 						role="button"
@@ -113,7 +115,7 @@ export default function Login() {
 						<p className="text-[13px] font-medium ml-4 text-gray-700 google-font">
 							Continue with Google
 						</p>
-					</button> */}
+					</button>
 				</form>
 
 				<div className="mt-4 text-center">

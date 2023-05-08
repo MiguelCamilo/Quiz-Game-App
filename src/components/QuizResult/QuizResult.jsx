@@ -19,9 +19,8 @@ export default function QuizResult({ length, score, handle_reset }) {
 
 	return (
 		<>
-			<div className="mt-20">
-				<div className='absolute bottom-0 right-0 m-[1rem]'>
-					<FeedbackButton />
+			<div className="mt-[3rem] sm:mt-0">
+				<div className='relative m-4'>
 				</div>
 				<div className="group absolute top-0 right-0 m-[1rem]">
 					<button
@@ -37,7 +36,7 @@ export default function QuizResult({ length, score, handle_reset }) {
 					Random Quiz Game
 				</h2>
 				{/* quiz card container */}
-				<div className="bg-white h-[38rem] w-[23rem] md:h-[40rem] md:w-[35rem] rounded-xl">
+				<div className="bg-white h-[35rem] w-[23rem] md:h-[40rem] md:w-[35rem] rounded-xl">
 					{/* results container */}
 					<div className="flex justify-center">
 						<img
@@ -77,6 +76,9 @@ export default function QuizResult({ length, score, handle_reset }) {
 							Try Again
 						</div>
 					</button>
+					<div className='flex justify-center w-full p-2'>
+					<FeedbackButton />
+					</div>
 				</div>
 			</div>
 		</>

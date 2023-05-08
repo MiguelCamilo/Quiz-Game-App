@@ -10,24 +10,24 @@ export default function ChooseQuiz() {
 		<>
 			<div className="hero min-h-screen">
 				{/* choose quiz intro */}
-				<div className="hero-content text-center">
+				<div className="text-center">
 					<LogOutBtn />
-					<div className="max-w-lg">
-						{!user
-							? <h1 className="text-2xl font-bold google-font">Welcome, <span className="text-white">{user?.displayName}</span>!</h1>
-							: <h1 className="font-bold google-font text-sm sm:text-2xl ">Welcome, <span className="text-white">{user?.email}</span>!</h1>
-						}
+					<div className="">
+						{/* {!user */}
+							 <h1 className="text-2xl font-bold google-font">Welcome, <span className="text-white">{user?.displayName}</span>!</h1>
+							 {/* <h1 className="font-bold google-font text-sm sm:text-2xl ">Welcome, <span className="text-white">{user?.email}</span>!</h1> */}
+						
 						
 						<p className="py-6 google-font text-white mt-2">Choose A Quiz to try out.</p>
 						{/* START grid container for games */}
-						<div className="flex flex-col sm:flex-row w-full justify-center items-center space-x-4">
+						<div className="flex flex-col sm:flex-row">
 							{/* first card */}
-							<div className="card w-96 mb-5 bg-base-100 shadow-xl image-full">
+							<div className="card w-96 mb-5 sm:mb-0 bg-base-500 shadow-xl image-full mr-5">
 								{/* <figure>
 									<img src="/public/vite.svg" alt="Shoes" />
 								</figure> */}
 								<div className="card-body rounded-xl">
-									<h2 className="card-title google-font text-[#F9A826]">
+									<h2 className="card-title google-font text-[#F9A826] pl-10">
 										Random Quiz
 									</h2>
 									<p className="google-font text-sm text-white opacity-55">
@@ -46,7 +46,7 @@ export default function ChooseQuiz() {
 							</div>
 
 							{/* second card */}
-							<div className="card w-96 bg-base-100 shadow-xl image-full">
+							<div className="card w-96 bg-base-500 shadow-xl image-full">
 								{/* <figure>
 									<img src="/public/vite.svg" alt="Shoes" />
 								</figure> */}

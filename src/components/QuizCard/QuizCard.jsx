@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import LogOutBtn from '../LogoutBtn/LogOutBtn';
 import { UserAuth } from '../../context/AuthContext';
 
@@ -12,7 +9,6 @@ export default function QuizCard({
 	setQuestionId,
 	setShowScore,
 }) {
-	const navigate = useNavigate();
 	const { user } = UserAuth();
 
 	const skip_question = () => {
@@ -36,7 +32,7 @@ export default function QuizCard({
 			</div>
 			{/* log out btn */}
 			<LogOutBtn />
-			<h2 className="text-white text-left text-xl sm:text-4xl font-black google-font mb-5">
+			<h2 className="text-white text-center text-xl sm:text-4xl font-black google-font mb-5">
 				Random Quiz Game
 			</h2>
 
