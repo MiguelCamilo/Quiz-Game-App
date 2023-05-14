@@ -37,10 +37,10 @@ export default function QuizCard({
 			</h2>
 
 			{/* quiz card container */}
-			<div className="flex flex-grow flex-col">
+			<div className="flex flex-grow flex-col bg-white rounded-2xl px-[1rem] py-[2rem] sm:px-6">
 				{/* top portion container */}
 				<div className="flex space-x-[2rem] sm:space-x-[14rem]">
-					<p className="text-start text-[16px] google-font font-bold text-white pt-8 pl-5">
+					<p className="text-start text-[16px] google-font font-bold text-[#2F527B] pt-8 pl-5">
 						Question {questionId + 1} of {length}
 					</p>
 
@@ -59,7 +59,7 @@ export default function QuizCard({
 
 				{/* question container */}
 				<div className="flex justify-center mt-8">
-					<p className="text-[#F9A826] text-center text-[18px] sm:text-[13px] google-font font-bold ">
+					<p className="text-[#2F527B] text-center text-[18px] sm:text-[13px] google-font font-bold ">
 						{data[questionId].question}
 					</p>
 				</div>
